@@ -1,0 +1,5 @@
+server:
+  port: 9091
+  undertow:
+    io-threads: 4
+    worker-threads: 300

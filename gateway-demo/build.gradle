@@ -1,0 +1,66 @@
+buildscript {
+    ext {
+
+    }
+
+    repositories {
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+        jcenter()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath("io.spring.gradle:dependency-management-plugin:${gradleDMVersion}")
+    }
+}
+
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'application'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'org.springframework.boot'
+
+
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    jcenter()
+    mavenCentral()
+}
+
+mainClassName = 'com.example.gatewaydemo.GatewayDemoApplication'
+group = 'com.example'
+version = '1.0.0'
+archivesBaseName = 'gateway-demo'
+description = 'Demo project for Spring Boot'
+
+
+dependencies {
+    implementation("org.springframework.cloud:spring-cloud-starter:$springCloudVersion")
+    implementation("org.springframework.cloud:spring-cloud-starter-gateway:$springCloudVersion")
+    implementation("commons-io:commons-io:$commonsioVersion")
+    implementation("org.apache.commons:commons-lang3:$commonslang3Version")
+    implementation("commons-beanutils:commons-beanutils:$commonsbeanutilsVersion")
+    implementation("commons-codec:commons-codec:$commonscodecVersion")
+    implementation("com.google.guava:guava:$guavaVersion")
+    implementation "org.springframework.boot:spring-boot-starter-logging:$springBootVersion"
+
+    compileOnly("org.projectlombok:lombok:$lombokVersion")
+    annotationProcessor("org.projectlombok:lombok:$lombokVersion")
+    testAnnotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    testCompileOnly "org.projectlombok:lombok:${lombokVersion}"
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
+    testImplementation("org.junit.jupiter:junit-jupiter-params:$junitVersion")
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
+}
+
+dependencyManagement {
+    imports {
+    }
+}
+
+

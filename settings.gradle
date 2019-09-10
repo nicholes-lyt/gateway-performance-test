@@ -1,0 +1,10 @@
+rootProject.name = 'gateway-performance-test'
+
+include 'backend-service-demo'
+include 'gateway-demo'
+
+
+
+
+
+
