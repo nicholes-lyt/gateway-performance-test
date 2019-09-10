@@ -1,4 +1,4 @@
-package com.example.backendservicedemo.controller;
+package com.example.controller;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;

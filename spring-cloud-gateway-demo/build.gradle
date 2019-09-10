@@ -11,7 +11,6 @@ buildscript {
 
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-        classpath("io.spring.gradle:dependency-management-plugin:${gradleDMVersion}")
     }
 }
 
@@ -20,9 +19,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'application'
-apply plugin: 'io.spring.dependency-management'
 apply plugin: 'org.springframework.boot'
-
 
 repositories {
     maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
@@ -30,14 +27,16 @@ repositories {
     mavenCentral()
 }
 
-mainClassName = 'com.example.gatewaydemo.GatewayDemoApplication'
+mainClassName = 'com.example.SpringCloudGatewayDemoApplication'
 group = 'com.example'
 version = '1.0.0'
-archivesBaseName = 'gateway-demo'
-description = 'Demo project for Spring Boot'
-
+archivesBaseName = 'spring-cloud-gateway-demo'
+description = 'Demo project for Spring Cloud Gateway'
 
 dependencies {
+    implementation "org.springframework.boot:spring-boot-starter:$springBootVersion"
+    implementation("org.springframework.boot:spring-boot-starter-webflux:$springBootVersion")
+    implementation "org.springframework.boot:spring-boot-starter-logging:$springBootVersion"
     implementation("org.springframework.cloud:spring-cloud-starter:$springCloudVersion")
     implementation("org.springframework.cloud:spring-cloud-starter-gateway:$springCloudVersion")
     implementation("commons-io:commons-io:$commonsioVersion")
@@ -45,7 +44,6 @@ dependencies {
     implementation("commons-beanutils:commons-beanutils:$commonsbeanutilsVersion")
     implementation("commons-codec:commons-codec:$commonscodecVersion")
     implementation("com.google.guava:guava:$guavaVersion")
-    implementation "org.springframework.boot:spring-boot-starter-logging:$springBootVersion"
 
     compileOnly("org.projectlombok:lombok:$lombokVersion")
     annotationProcessor("org.projectlombok:lombok:$lombokVersion")
@@ -58,9 +56,5 @@ dependencies {
     testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
-dependencyManagement {
-    imports {
-    }
-}
 
 

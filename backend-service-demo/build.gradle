@@ -11,7 +11,6 @@ buildscript {
 
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
-        classpath("io.spring.gradle:dependency-management-plugin:${gradleDMVersion}")
     }
 }
 
@@ -20,7 +19,6 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'application'
-apply plugin: 'io.spring.dependency-management'
 apply plugin: 'org.springframework.boot'
 
 
@@ -30,12 +28,11 @@ repositories {
     mavenCentral()
 }
 
-mainClassName = 'com.example.backendservicedemo.BackendServiceDemoApplication'
+mainClassName = 'com.example.BackendServiceDemoApplication'
 group = 'com.example'
 version = '1.0.0'
 archivesBaseName = 'backend-service-demo'
 description = 'Demo project for Spring Boot'
-
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter:$springBootVersion")
@@ -64,8 +61,5 @@ dependencies {
     testRuntime("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
-dependencyManagement {
-    imports {
-    }
-}
+
 
