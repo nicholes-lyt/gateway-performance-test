@@ -32,12 +32,11 @@ java -Xms4g -Xmx4g -XX:+UseG1GC -jar spring-cloud-gateway-demo/build/libs/spring
 brew install wrk2
 ```
 
-#### Test response with 100 characters
 ```bash
 ./performance-test.sh > performance-test.txt
 
 ```
 
 ### 第五步
-查看输出数据
+查看输出数据 performance-test.txt
 
