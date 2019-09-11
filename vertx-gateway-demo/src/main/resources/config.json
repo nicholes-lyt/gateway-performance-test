@@ -1,0 +1,6 @@
+{
+  "server.port": 9093,
+  "info.app.port": 9091,
+  "info.app.host": "127.0.0.1"
+}
+

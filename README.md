@@ -16,10 +16,16 @@ java  -Xms4g -Xmx4g -XX:+UseG1GC -jar backend-service-demo/build/libs/backend-se
 
 ### 第三步
 
-#### run `gateway-demo`
+#### run `spring-cloud-gateway-demo`
 
 ```
 java -Xms4g -Xmx4g -XX:+UseG1GC -jar spring-cloud-gateway-demo/build/libs/spring-cloud-gateway-demo-1.0.0.jar
+```
+
+#### run `vertx-gateway-demo`
+
+```
+java -Xms4g -Xmx4g -XX:+UseG1GC -jar vertx-gateway-demo/build/libs/vertx-gateway-demo-1.0.0.jar
 ```
 
 ### 第四步
