@@ -28,6 +28,13 @@ java -Xms4g -Xmx4g -XX:+UseG1GC -jar spring-cloud-gateway-demo/build/libs/spring
 java -Xms4g -Xmx4g -XX:+UseG1GC -jar vertx-gateway-demo/build/libs/vertx-gateway-demo-1.0.0.jar
 ```
 
+#### run `envoy-demo`
+
+```
+ulimit -S -n 1048576 && envoy -c ./envoy.yaml
+```
+
+
 ### 第四步
 
 #### benchmark with `wrk2`
